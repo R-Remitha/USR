@@ -1,0 +1,79 @@
+*
+        {
+            margin: 0px;
+        }
+        .menu
+        {
+            width: 100%;
+            height: 41px;
+            background-color: black;
+        }
+        .menu p
+        {
+            color: white;
+            font-size: 32px;
+            margin-left: 10px;
+        }
+        footer 
+        {
+            position: fixed;
+            width: 100%;
+            background-color:black;
+            color: white;
+            text-align: center;
+            height:25px;
+            bottom: 0;
+        }
+        .tta
+        {
+            margin-top:20px;
+            margin-left:12px;
+        }
+        .tta textarea
+        {
+            height: auto;
+            width: 1169px;
+            font-size:medium;
+        }
+        .ttab
+        {
+            margin-top: -41px;
+            margin-left: 1222px;
+        }
+        .ttab input
+        {
+            height: 37px;
+            width: 193px;
+        }
+        .outl
+        {
+            height: auto;
+            width: 570px;
+            margin-top: 21px;
+            margin-left: 13px;
+        }
+        .os
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        .osc
+        {
+            padding-top: 20px;
+            font-size: large;
+            line-height: 25px;
+        }
+        p.osc:hover
+        {
+            background-color: yellow;
+        }
+        .usr
+        {
+            position: fixed;
+            height: 597px;
+            width: 884px;
+            margin-top: 21px;
+            margin-left: 611px;
+            border: 5px solid black;
+            background-color: lightgrey;
+        }
