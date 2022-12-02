@@ -77,19 +77,25 @@ function get1()
     for (let i = 0; i < 9; i++) 
     {
         const row = document.createElement("tr");
+        var div = document.createElement("div");
+        div.className='headerdiv';
         const h = document.createElement("th");
         const cellText = document.createTextNode(y[i]);
         console.log(cellText);
         h.appendChild(cellText);
-        row.appendChild(h);
+        div.appendChild(h);
+        row.appendChild(div);
 
         for(let k = 0; k < no; k++)
         {
+            var div = document.createElement("div");
+            div.className='headerdiv2';
             const cell = document.createElement("td");
             const cellText = document.createTextNode(z[j][k]);
             console.log(cellText);
             cell.appendChild(cellText);
-            row.appendChild(cell);
+            div.appendChild(cell);
+            row.appendChild(div);
             if(i==8)
             {
                  cell.setAttribute("colspan","4");
@@ -99,7 +105,7 @@ function get1()
         j++;
         tbl.appendChild(row);
     }
-    tbl.setAttribute("border",'2');
+    //tbl.setAttribute("border",'1');
   document.getElementById('usr').appendChild(tbl);
 
 }
