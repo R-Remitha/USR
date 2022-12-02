@@ -70,8 +70,8 @@
         .usr
         {
             position: fixed;
-            height: 597px;
-            width: 884px;
+            height: auto;
+            width: auto;
             margin-top: 21px;
             margin-left: 611px;
             border: 5px solid black;
@@ -81,18 +81,35 @@
         {
             margin-top: 32px;
             margin-left: 57px;
+            border-collapse: separate;
+            margin-bottom: 32px;
+            margin-right: 24px;
         }
         td,th
         {
             height: 35px;
+            border-radius: 7px;
+            box-shadow: 2px 1px 2px black;
         }
         th
         {
-            background: cadetblue;
+            background: #ffc107;
             width: 174px;
+            padding-top: 13px;
         }
         td{
-            background: antiquewhite;
-            width: 121px;
+            background: white;
+            width: 174px;
+            padding-top: 13px;
             text-align: center;
+        }
+        .headerdiv
+        {
+            
+            width: 264px;
+        }
+        .headerdiv2
+        {
+            display: contents;
+            width: auto;
         }
