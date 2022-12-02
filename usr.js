@@ -1,3 +1,4 @@
+
 function get()
 {
     tim=setTimeout(get1,3);
@@ -35,24 +36,70 @@ function get1()
     const buttons = document.getElementsByTagName("p");
     const buttonPressed = e => {
         //console.log(e.target.id);  // Get ID of Clicked Element
-        var i=e.target.id;
+        /*var i=e.target.id;
         var sentence=document.getElementById(i).innerHTML;
         console.log(sentence);
         var m=document.getElementById('hi');
         m.innerHTML=sentence;
         const api_url='https://127.0.0.1:5000/'+sentence;
-        getapi(api_url);
+        getapi(api_url);*/
+        getapi();
+        
     }
     for (let t of buttons) {
         t.addEventListener("click", buttonPressed);
     }
-    async function getapi(url) {
-        const response = await fetch(url,{
+}
+    async function getapi() {
+        
+        /*const response = await fetch(url,{
             method: 'GET',
             headers: {
               Accept: 'application/json',
-    }});
-        var data = await response.json();
-        console.log('result is: ', JSON.stringify(result, null));
+    }});*/
+    const request = new Request('usr.json');
+
+  const response = await fetch(request);
+  const find = await response.json();
+  var y=Object.keys(find);
+  var z=Object.values(find);
+  
+  var m=document.getElementById('hi');
+    let no=find.Concept.length;
+    
+
+    const tbl = document.createElement("table");
+    tbl.className='table';
+    tbl.id='table';
+    const tbBody = document.createElement("tbody");
+    
+    var j=0;
+    for (let i = 0; i < 9; i++) 
+    {
+        const row = document.createElement("tr");
+        const h = document.createElement("th");
+        const cellText = document.createTextNode(y[i]);
+        console.log(cellText);
+        h.appendChild(cellText);
+        row.appendChild(h);
+
+        for(let k = 0; k < no; k++)
+        {
+            const cell = document.createElement("td");
+            const cellText = document.createTextNode(z[j][k]);
+            console.log(cellText);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            if(i==8)
+            {
+                 cell.setAttribute("colspan","4");
+                 break;
+            }
+        }
+        j++;
+        tbl.appendChild(row);
     }
+    tbl.setAttribute("border",'2');
+  document.getElementById('usr').appendChild(tbl);
+
 }
